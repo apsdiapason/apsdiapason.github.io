@@ -34,12 +34,15 @@
         var currentImages = document.querySelectorAll('.img-gallery');//getting all the images i display
         var usedSrc = new Set();
         for (i=0; i<currentImages.length; i++) {
+            console.log('switching image '+ i+ ' '+ currentImages[i].src);
             var keeplooking = true;
             while (keeplooking) {
                 var j = Math.floor(Math.random() * sources.length);//pick one at random from the sources
                 var currentsrc= sources[j];
                 keeplooking = usedSrc.has(currentsrc);//if already used keeploking
-                if(!keeplooking) currentImages[i].src=sources[j]; //if found substituite
+                if(!keeplooking) {
+                    currentImages[i].src=sources[j]; //if found substituite
+                    usedSrc.add(sources[j]);//and track usage
             }
         }
     }, 2000);
