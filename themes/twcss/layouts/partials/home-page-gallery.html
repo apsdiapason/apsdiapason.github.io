@@ -1,1 +1,64 @@
-<img src="https://dummyimage.com/300"/>
+<div class="gallery">
+    <img src="https://dummyimage.com/300" class = "img-gallery"/>
+    <img src="https://dummyimage.com/300" class = "img-gallery"/>
+    <img src="https://dummyimage.com/300" class = "img-gallery"/>
+    <img src="https://dummyimage.com/300" class = "img-gallery"/>
+    <img src="https://dummyimage.com/300" class = "img-gallery"/>
+    <img src="https://dummyimage.com/300" class = "img-gallery"/>
+    <img src="https://dummyimage.com/300" class = "img-gallery"/>
+    <img src="https://dummyimage.com/300" class = "img-gallery"/>
+    <img src="https://dummyimage.com/300" class = "img-gallery"/>
+</div>
+
+<script>
+    var colorArray =
+        ['FF6633', 'FFB399', 'FF33FF', 'FFFF99', '00B3E6',
+        'E6B333', '3366E6', '999966', '99FF99', 'B34D4D',
+        '80B300', '809900', 'E6B3B3', '6680B3', '66991A',
+        'FF99E6', 'CCFF1A', 'FF1A66', 'E6331A', '33FFCC',
+        '66994D', 'B366CC', '4D8000', 'B33300', 'CC80CC',
+        '66664D', '991AFF', 'E666FF', '4DB3FF', '1AB399',
+        'E666B3', '33991A', 'CC9999', 'B3B31A', '00E680',
+        '4D8066', '809980', 'E6FF80', '1AFF33', '999933',
+        'FF3380', 'CCCC00', '66E64D', '4D80CC', '9900B3',
+        'E64D66', '4DB380', 'FF4D4D', '99E6E6', '6666FF'];
+
+    var images = [];
+    for (i = 0; i < colorArray.length; i++) {
+        images[i] = 'https://dummyimage.com/300/' + colorArray[i];
+    }
+    /*var images = [
+            '{{ ( resources.Get "images/primi-piani/thumbs/1.png" ).RelPermalink }}',
+            '{{ ( resources.Get "images/primi-piani/thumbs/2.png" ).RelPermalink }}',
+            '{{ ( resources.Get "images/primi-piani/thumbs/3.png" ).RelPermalink }}',
+            '{{ ( resources.Get "images/primi-piani/thumbs/4.png" ).RelPermalink }}',
+            '{{ ( resources.Get "images/primi-piani/thumbs/5.png" ).RelPermalink }}',
+            '{{ ( resources.Get "images/primi-piani/thumbs/6.png" ).RelPermalink }}',
+            '{{ ( resources.Get "images/primi-piani/thumbs/7.png" ).RelPermalink }}',
+            '{{ ( resources.Get "images/primi-piani/thumbs/8.png" ).RelPermalink }}',
+            '{{ ( resources.Get "images/primi-piani/thumbs/10.png" ).RelPermalink }}',
+            '{{ ( resources.Get "images/primi-piani/thumbs/11.png" ).RelPermalink }}',
+            '{{ ( resources.Get "images/primi-piani/thumbs/12.png" ).RelPermalink }}',
+            '{{ ( resources.Get "images/primi-piani/thumbs/13.png" ).RelPermalink }}',
+            '{{ ( resources.Get "images/primi-piani/thumbs/14.png" ).RelPermalink }}',
+            '{{ ( resources.Get "images/primi-piani/thumbs/15.png" ).RelPermalink }}',
+            '{{ ( resources.Get "images/primi-piani/thumbs/19.png" ).RelPermalink }}',
+            '{{ ( resources.Get "images/primi-piani/thumbs/20.png" ).RelPermalink }}'
+        ];*/
+
+    var imgcontainers = document.querySelector('.img-gallery');
+
+    window.setInterval(function () {
+            // var currentImages = boxes.map(b => basename(b.src));
+            // console.log(currentImages);
+            // var j = Math.floor(Math.random() * images.length);
+            // while (currentImages.indexOf(basename(images[j])) > -1) {
+            //     j = Math.floor(Math.random() * images.length);
+            // }
+            // var i = Math.floor(Math.random() * boxes.length);
+            // console.log("setting image of " + i + " to " + j);
+            // // boxes[i].style.opacity = "0";
+            // boxes[i].src = images[j];
+            // // boxes[i].style.opacity = "1";
+    }, 2000);
+</script>
