@@ -1,13 +1,8 @@
-<div class="gallery">
-    <img src="https://dummyimage.com/300" class = "img-gallery"/>
-    <img src="https://dummyimage.com/300" class = "img-gallery"/>
-    <img src="https://dummyimage.com/300" class = "img-gallery"/>
-    <img src="https://dummyimage.com/300" class = "img-gallery"/>
-    <img src="https://dummyimage.com/300" class = "img-gallery"/>
-    <img src="https://dummyimage.com/300" class = "img-gallery"/>
-    <img src="https://dummyimage.com/300" class = "img-gallery"/>
-    <img src="https://dummyimage.com/300" class = "img-gallery"/>
-    <img src="https://dummyimage.com/300" class = "img-gallery"/>
+<div class="gallery flex lg:container lg:mx-auto">
+    <img src="https://dummyimage.com/300" class = "img-gallery"/><!--always displayed 300px-->
+    <img src="https://dummyimage.com/300" class = "img-gallery"/><!--always displayed 600px-->
+    <img src="https://dummyimage.com/300" class = "img-gallery hidden lg:display"/><!--above 1024 displayed 900-->
+    <img src="https://dummyimage.com/300" class = "img-gallery hidden xl:display"/><!--above 1280 displayed 1200px-->
 </div>
 
 <script>
