@@ -39,10 +39,14 @@
             while (keeplooking) {
                 var j = Math.floor(Math.random() * sources.length);//pick one at random from the sources
                 var currentsrc= sources[j];
-                keeplooking = usedSrc.has(currentsrc);//if already used keeploking
-                if(!keeplooking) {
+                if(usedSrc.has(currentsrc)) {//if already used keeploking
+                    keeplooking = true;       
+                } else {
+                    keeplooking = false;
                     currentImages[i].src=sources[j]; //if found substituite
                     usedSrc.add(sources[j]);//and track usage
+                    console.log('used j='+j+' src='+sources[j]);
+                }
             }
         }
     }, 2000);
