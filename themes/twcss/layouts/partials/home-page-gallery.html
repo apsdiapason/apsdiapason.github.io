@@ -11,6 +11,7 @@
 </div>
 
 <script>
+    //for testing only
     var colorArray =
         ['FF6633', 'FFB399', 'FF33FF', 'FFFF99', '00B3E6',
         'E6B333', '3366E6', '999966', '99FF99', 'B34D4D',
@@ -23,42 +24,23 @@
         'FF3380', 'CCCC00', '66E64D', '4D80CC', '9900B3',
         'E64D66', '4DB380', 'FF4D4D', '99E6E6', '6666FF'];
 
-    var images = [];
+    var sources = [];//wil contain the list of images to use, despite how many i display
     for (i = 0; i < colorArray.length; i++) {
-        images[i] = 'https://dummyimage.com/300/' + colorArray[i];
+        sources[i] = 'https://dummyimage.com/300/' + colorArray[i];
     }
-    /*var images = [
-            '{{ ( resources.Get "images/primi-piani/thumbs/1.png" ).RelPermalink }}',
-            '{{ ( resources.Get "images/primi-piani/thumbs/2.png" ).RelPermalink }}',
-            '{{ ( resources.Get "images/primi-piani/thumbs/3.png" ).RelPermalink }}',
-            '{{ ( resources.Get "images/primi-piani/thumbs/4.png" ).RelPermalink }}',
-            '{{ ( resources.Get "images/primi-piani/thumbs/5.png" ).RelPermalink }}',
-            '{{ ( resources.Get "images/primi-piani/thumbs/6.png" ).RelPermalink }}',
-            '{{ ( resources.Get "images/primi-piani/thumbs/7.png" ).RelPermalink }}',
-            '{{ ( resources.Get "images/primi-piani/thumbs/8.png" ).RelPermalink }}',
-            '{{ ( resources.Get "images/primi-piani/thumbs/10.png" ).RelPermalink }}',
-            '{{ ( resources.Get "images/primi-piani/thumbs/11.png" ).RelPermalink }}',
-            '{{ ( resources.Get "images/primi-piani/thumbs/12.png" ).RelPermalink }}',
-            '{{ ( resources.Get "images/primi-piani/thumbs/13.png" ).RelPermalink }}',
-            '{{ ( resources.Get "images/primi-piani/thumbs/14.png" ).RelPermalink }}',
-            '{{ ( resources.Get "images/primi-piani/thumbs/15.png" ).RelPermalink }}',
-            '{{ ( resources.Get "images/primi-piani/thumbs/19.png" ).RelPermalink }}',
-            '{{ ( resources.Get "images/primi-piani/thumbs/20.png" ).RelPermalink }}'
-        ];*/
 
-    var imgcontainers = document.querySelector('.img-gallery');
 
-    window.setInterval(function () {
-            // var currentImages = boxes.map(b => basename(b.src));
-            // console.log(currentImages);
-            // var j = Math.floor(Math.random() * images.length);
-            // while (currentImages.indexOf(basename(images[j])) > -1) {
-            //     j = Math.floor(Math.random() * images.length);
-            // }
-            // var i = Math.floor(Math.random() * boxes.length);
-            // console.log("setting image of " + i + " to " + j);
-            // // boxes[i].style.opacity = "0";
-            // boxes[i].src = images[j];
-            // // boxes[i].style.opacity = "1";
+    window.setInterval(function () {//un every 2 seconds
+        var currentImages = document.querySelectorAll('.img-gallery');//getting all the images i display
+        var usedSrc = new Set();
+        for (i=0; i<currentImages.length; i++) {
+            var keeplooking = true;
+            while (keeplooking) {
+                var j = Math.floor(Math.random() * sources.length);//pick one at random from the sources
+                var currentsrc= sources[j];
+                keeplooking = usedSrc.has(currentsrc);//if already used keeploking
+                if(!keeplooking) currentImages[i].src=sources[j]; //if found substituite
+            }
+        }
     }, 2000);
 </script>
