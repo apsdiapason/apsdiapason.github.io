@@ -3,7 +3,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'aps-yellow': '#FFFF00',
+        'aps-yellow': {
+          default:'#FFFF00',
+          lighter:'FFFFAA',
+          darker:'FFAA00'
+        },
         'aps-blue': '#0000FF',
         'aps-red': '#FF00FF',
         'aps-pink': '#FF0000'
