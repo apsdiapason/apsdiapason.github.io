@@ -1,18 +1,3 @@
-<!-- <div class="gallery flex flex-wrap justify-center bg-black">
-    <div class="flex flex-wrap justify-center">
-        <div class="m-2"><img src="https://dummyimage.com/300" class = "img-gallery"/></div>
-        <div class="m-2"><img src="https://dummyimage.com/300" class = "img-gallery"/></div>
-    </div>
-    <div class="flex flex-wrap justify-center">
-        <div class="m-2"><img src="https://dummyimage.com/300" class = "img-gallery"/></div>
-        <div class="m-2"><img src="https://dummyimage.com/300" class = "img-gallery"/></div>
-    </div>
-    <div class="hidden lg:flex lg:flex-wrap lg:justify-center ">
-        <div class="m-2"><img src="https://dummyimage.com/300" class = "img-gallery"/></div>
-        <div class="m-2"><img src="https://dummyimage.com/300" class = "img-gallery"/></div>
-    </div>
-</div> -->
-
 <div class="gallery flex flex-wrap justify-center"> <!--simpler nav-->
     <img src="https://picsum.photos/300/300" class="img-gallery m-2 rounded-lg" />
     <img src="https://picsum.photos/300/300" class="img-gallery m-2 hidden sm:flex rounded-lg" />
@@ -34,20 +19,26 @@
     window.setInterval(function () {//un every 2 seconds
         var currentImages = document.querySelectorAll('.img-gallery');//getting all the images i display
         var usedSrc = new Set();
+        var tochange = Math.floor(Math.random() * currentImages.length);//pick one at random to change
+
         for (i=0; i<currentImages.length; i++) {
-            console.log('switching image '+ i+ ' '+ currentImages[i].src);
-            var keeplooking = true;
-            while (keeplooking) {
-                var j = Math.floor(Math.random() * sources.length);//pick one at random from the sources
-                var currentsrc= sources[j];
-                if(usedSrc.has(currentsrc)) {//if already used keeploking
-                    keeplooking = true;       
-                } else {
-                    keeplooking = false;
-                    currentImages[i].src=sources[j]; //if found substituite
-                    usedSrc.add(sources[j]);//and track usage
-                    console.log('used j='+j+' src='+sources[j]);
+            if (i==tochange) {
+                console.log('switching image '+ i+ ' '+ currentImages[i].src);
+                var keeplooking = true;
+                while (keeplooking) {
+                    var j = Math.floor(Math.random() * sources.length);//pick one at random from the pool of sources
+                    var currentsrc= sources[j];
+                    if(usedSrc.has(currentsrc)) {//if already used keeploking
+                        keeplooking = true;       
+                    } else {
+                        keeplooking = false;
+                        currentImages[i].src=sources[j]; //if found substituite
+                        usedSrc.add(sources[j]);//and track usage
+                        console.log('used j='+j+' src='+sources[j]);
+                    }
                 }
+            } else {
+                //still looking for the image to change
             }
         }
     }, 2000);
