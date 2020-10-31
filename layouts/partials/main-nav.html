@@ -1,20 +1,25 @@
-<nav class="flex flex-wrap items-center justify-between bg-teal-500">
-    <div class="flex items-center flex-shrink-0 mr-6 text-white">
-        <!--LOGO-->
-        <img src='{{ ( resources.Get "logoaps.svg" ).RelPermalink }}' alt="APS Diapason"
+<nav class="flex flex-wrap items-center justify-between bg-teal-900">
+
+    <div class="flex items-center flex-shrink-0 mr-6 text-white"><!--LOGO START-->
+        <a href='{{ absURL "" }}'>
+            <img src='{{ ( resources.Get "logoaps.svg" ).RelPermalink }}' alt="APS Diapason" 
             class="w-16 h-16 mr-2 fill-current">
-        <span class="text-xl font-semibold tracking-tight">APS Diapason</span>
-    </div>
-    <div class="block p-2 lg:hidden">
+        </a>
+        <a href='{{ absURL "" }}'><span class="text-xl font-semibold tracking-tight">APS Diapason</span></a>
+        </a>
+    </div><!--LOGO END-->
+
+    <div class="block p-2 lg:hidden"><!--NAV BUTTON START-->
         <button
-            class="flex items-center px-3 py-2 text-teal-200 border border-teal-400 rounded hover:text-white hover:border-white"
+            class="flex items-center px-3 py-2 text-teal-200 border border-teal-200 rounded hover:text-white hover:border-white"
             onclick="handleNavClick();">
             <svg class="w-6 h-6 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <title>Menu</title>
                 <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
             </svg>
         </button>
-    </div>
+    </div><!--NAV BUTTON END-->
+    
     <div class="flex-grow hidden block w-full nav-menu lg:flex lg:items-center lg:w-auto">
         <div class="text-sm lg:flex-grow">
             <a href='{{ absURL "associazione" }}'
@@ -30,3 +35,10 @@
         </div>
     </div>
 </nav>
+<script>
+    function handleNavClick() {
+        console.log('handleNavClick');
+        const navmenu = document.querySelector('.nav-menu');
+        navmenu.classList.toggle('hidden');
+    }
+</script>

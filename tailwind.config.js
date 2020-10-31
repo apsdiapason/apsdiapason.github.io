@@ -12,6 +12,11 @@ module.exports = {
         'aps-red': '#FF00FF',
         'aps-pink': '#FF0000'
       },
+      borderRadius: {
+        'xl': '0.75rem',
+        '2xl': '1.5rem',
+        '3xl': '2.25rem'
+      },
       animation: {
         fadeIn: "fadeIn 2s ease-in forwards"
       },
