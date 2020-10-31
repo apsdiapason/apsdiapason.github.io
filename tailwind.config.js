@@ -1,12 +1,6 @@
 module.exports = {
   purge: [],
   theme: {
-      colors :{
-        'yellowaps' :  '#FFFF00',
-        'blueaps' :  '#0000FF',
-        'pinkaps' :  '#FF00FF',
-        'redaps' :  '#FF0000',
-      },
       extend: {
       animation: {
         fadeIn: "fadeIn 2s ease-in forwards"
@@ -29,5 +23,5 @@ module.exports = {
     purgeLayersByDefault: true,
     defaultLineHeights: true,
     standardFontWeights: true,
-  },
+  }
 }
