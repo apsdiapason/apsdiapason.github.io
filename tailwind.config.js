@@ -1,7 +1,23 @@
 module.exports = {
   purge: [],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'aps-yellow': '#FFFF00',
+        'aps-blue': '#0000FF',
+        'aps-red': '#FF00FF',
+        'aps-pink': '#FF0000'
+      },
+      animation: {
+        fadeIn: "fadeIn 2s ease-in forwards"
+      },
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 }
+        }
+      }
+    },
     fontFamily: {}
   },
   variants: {},
@@ -11,5 +27,5 @@ module.exports = {
     purgeLayersByDefault: true,
     defaultLineHeights: true,
     standardFontWeights: true,
-  },
-}
+  }
+};
