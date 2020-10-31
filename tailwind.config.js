@@ -3,10 +3,10 @@ module.exports = {
   theme: {
       extend: {
         colors: {
-          'aps-yellow': '#5c6ac4',
-          'aps-blue': '#007ace',
-          'aps-red': '#de3618',
-          'aps-pink': '#de3618'
+          'aps-yellow': '#FFFF00',
+          'aps-blue': '#0000FF',
+          'aps-red': '#FF00FF',
+          'aps-pink': '#FF0000'
         },
       animation: {
         fadeIn: "fadeIn 2s ease-in forwards"
