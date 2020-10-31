@@ -5,8 +5,8 @@ module.exports = {
       colors: {
         'aps-yellow': {
           default:'#FFFF00',
-          lighter:'FFFFAA',
-          darker:'FFAA00'
+          lighter:'#FFFFAA',
+          darker:'#FFAA00'
         },
         'aps-blue': '#0000FF',
         'aps-red': '#FF00FF',
