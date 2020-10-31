@@ -1,9 +1,11 @@
 <nav class="flex flex-wrap items-center justify-between bg-teal-500">
     <div class="flex items-center flex-shrink-0 mr-6 text-white">
         <!--LOGO-->
-        <img src='{{ ( resources.Get "logoaps.svg" ).RelPermalink }}' alt="APS Diapason"
+        <a href='{{ absURL }}'>
+            <img src='{{ ( resources.Get "logoaps.svg" ).RelPermalink }}' alt="APS Diapason" 
             class="w-16 h-16 mr-2 fill-current">
-        <span class="text-xl font-semibold tracking-tight">APS Diapason</span>
+            <span class="text-xl font-semibold tracking-tight">APS Diapason</span>
+        </a>
     </div>
     <div class="block p-2 lg:hidden">
         <button
