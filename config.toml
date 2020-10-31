@@ -1,4 +1,4 @@
 baseURL = "https://fabrisd.github.io/apsdiapason/"
 languageCode = "en-us"
 title = "Aps Diapason"
-theme = "twcss"
+# theme = "twcss"
