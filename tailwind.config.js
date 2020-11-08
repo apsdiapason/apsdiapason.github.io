@@ -1,6 +1,9 @@
 module.exports = {
   purge: [],
   theme: {
+    maxWidth: {
+      '300': '300px'
+      },
     extend: {
       colors: {
         'aps-yellow': {
