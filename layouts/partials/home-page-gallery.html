@@ -8,12 +8,21 @@
 <script>
     //for testing only
 
-    var sources = [];//wil contain the list of images to use, despite how many i display
-    var poolsize = 50;
-    for (i = 0; i < poolsize; i++) {
-        var  currid= 1000+i;
-        sources[i] = 'https://picsum.photos/id/'+currid+'/300';
-    }
+    var sources = [
+        '{{ ( resources.Get "images/HOME_associazione.png" ).RelPermalink }}',
+        '{{ ( resources.Get "images/HOME_corsi.png" ).RelPermalink }}',
+        '{{ ( resources.Get "images/HOME_eventi.png" ).RelPermalink }}',
+        '{{ ( resources.Get "images/HOME_coro.png" ).RelPermalink }}',
+        '{{ ( resources.Get "images/GALLERY_01.png" ).RelPermalink }}'
+        ];//wil contain the list of images to use, despite how many i display
+    
+    
+    //var poolsize = 50; testing only
+    //for (i = 0; i < poolsize; i++) {
+    //    var  currid= 1000+i;
+    //    sources[i] = 'https://picsum.photos/id/'+currid+'/300';
+    //}
+
 
 
     window.setInterval(function () {//un every 2 seconds
