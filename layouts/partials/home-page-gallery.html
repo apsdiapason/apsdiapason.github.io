@@ -40,6 +40,7 @@
         var tochange = Math.floor(Math.random() * currentImages.length);//pick one at random to change
 
         for (i=0; i<currentImages.length; i++) {
+            usedSrc.add(currentImages[i].src); //the one i see is used
             if (i==tochange) {
                 console.log('switching image '+ i+ ' '+ currentImages[i].src);
                 var keeplooking = true;
