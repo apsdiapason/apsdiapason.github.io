@@ -1,43 +1,89 @@
-<div class="flex flex-wrap justify-center"><!--suggestd ratio 1:2 for better layout-->
-    <div class="justify-center m-2 w-screen md:w-5/12">
-      <div class="bg-orange-400 p-4 m-0 rounded-t-lg">
-        <a href='{{ absURL "associazione" }}' ><h1 class="text-center font-bold text-white">Associazione</h1></a>
-      </div>
-      <img src='{{ ( resources.Get "images/HOME_associazione.png" ).RelPermalink }}' class="w-full object-cover" />
-      <div class="py-4 px-8 md:h-48 bg-yellow-200 text-gray-900 align-middle overflow-auto"><span class="font-bold">Lorem Ipsum </span> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of L</div>
-      <div class="bg-yellow-200 rounded-b-lg flex justify-end">
-        <a href='{{ absURL "associazione" }}' class="bg-orange-300 hover:bg-orange-400 text-gray-900 font-bold py-2 px-20 rounded-2xl m-4 cursor-pointer">Scopri di più</a>
-      </div>
+<div class="flex flex-wrap justify-center">
+  <!--suggestd ratio 1:2 for better layout-->
+
+  <div class="justify-center m-2 w-screen md:w-5/12">
+    <!--ASSOCIAZIONE START-->
+    <div class="bg-orange-400 p-4 m-0 rounded-t-lg">
+      <a href='{{ absURL "associazione" }}'>
+        <h1 class="text-center font-bold text-white">Associazione</h1>
+      </a>
     </div>
-    <div class="justify-center m-2 w-screen md:w-5/12">
-      <div class="bg-pink-700 p-4 m-0 rounded-t-lg">
-        <a href='{{ absURL "corsi" }}' ><h1 class="text-center font-bold text-white">Corsi</h1></a>
-      </div>
-      <img src='{{ ( resources.Get "images/HOME_corsi.png" ).RelPermalink }}' class="w-full object-cover" />
-      <div class="py-4 px-8 md:h-48 bg-pink-200 text-gray-900 align-middle overflow-auto"><span class="font-bold">Lorem Ipsum </span> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of L</div>
-      <div class="bg-pink-200 rounded-b-lg flex justify-end">
-        <a href='{{ absURL "corsi" }}'  class="bg-pink-400 hover:bg-pink-500 text-gray-900 font-bold py-2 px-20 rounded-2xl m-4 cursor-pointer">Scopri di più</a>
-      </div>
+    <img src='{{ ( resources.Get "images/HOME_associazione.png" ).RelPermalink }}' class="w-full object-cover" />
+    <div class="py-4 px-8 md:h-48 bg-yellow-200 text-gray-900 align-middle overflow-auto">
+      <span class="font-bold">L'associazione </span> di promozione sociale Diapason nasce nel 2019 con l’intento di
+      creare attraverso la musica spazi aggregativi, occasioni di crescita e conoscenza, condivisione culturale.<br>
+      Proponiamo corsi di musica, dal pianoforte alla vocalità, dalla propedeutica per bambini all’improvvisazione come
+      metodo di avviamento alla musica, collaboriamo con la Corte polifonica, un coro nato nel 2020, e altre realtà
+      locali, offriamo ai ragazzi delle vacanze estive all’insegna della musica e della creatività e molto altro.
     </div>
-    <div class="justify-center m-2 w-screen md:w-5/12">
-      <div class="bg-red-800 p-4 m-0 rounded-t-lg">
-        <a href='{{ absURL "eventi" }}'><h1 class="text-center font-bold text-white">Eventi</h1></a>
-      </div>
-      <img src='{{ ( resources.Get "images/HOME_eventi.png" ).RelPermalink }}' class="w-full object-cover" />
-      <div class="py-4 px-8 md:h-48 bg-red-200 text-gray-900 align-middle overflow-auto"><span class="font-bold">Lorem Ipsum </span> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of L</div>
-      <div class="bg-red-200 rounded-b-lg flex justify-end">
-        <a href='{{ absURL "eventi" }}'  class="bg-red-500 hover:bg-red-600 text-gray-900 font-bold py-2 px-20 rounded-2xl m-4 cursor-pointer">Scopri di più</a>
-      </div>
-    </div>
-    <div class="justify-center m-2 w-screen md:w-5/12">
-      <div class="bg-blue-800 p-4 m-0 rounded-t-lg">
-        <a href='https://cecca.github.io/cortepolifonica/' ><h1 class="text-center font-bold text-white">Coro</h1></a>
-      </div>
-      <img src='{{ ( resources.Get "images/HOME_coro.png" ).RelPermalink }}' class="w-full object-cover" />
-      <div class="py-4 px-8 md:h-48 bg-blue-200 text-gray-900 align-middle overflow-auto"><span class="font-bold">Lorem Ipsum </span> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of L</div>
-      <div class="bg-blue-200 rounded-b-lg flex justify-end">
-        <a href='https://cecca.github.io/cortepolifonica/'  class="bg-blue-400 hover:bg-blue-500 text-gray-900 font-bold py-2 px-20 rounded-2xl m-4 cursor-pointer">Scopri di più</a>
-      </div>
+    <div class="bg-yellow-200 rounded-b-lg flex justify-end">
+      <a href='{{ absURL "associazione" }}'
+        class="bg-orange-300 hover:bg-orange-400 text-gray-900 font-bold py-2 px-20 rounded-2xl m-4 cursor-pointer">Scopri
+        di più</a>
     </div>
   </div>
-  
+  <!--ASSOCIAZIONE END-->
+
+  <div class="justify-center m-2 w-screen md:w-5/12">
+    <!--CORSI START-->
+    <div class="bg-pink-700 p-4 m-0 rounded-t-lg">
+      <a href='{{ absURL "corsi" }}'>
+        <h1 class="text-center font-bold text-white">Corsi</h1>
+      </a>
+    </div>
+    <img src='{{ ( resources.Get "images/HOME_corsi.png" ).RelPermalink }}' class="w-full object-cover" />
+    <div class="py-4 px-8 md:h-48 bg-pink-200 text-gray-900 align-middle overflow-auto">
+      L’associazione propone corsi annuali di pianoforte, percorsi di propedeutica musicale, avviamento alla musica per
+      piccoli gruppi, vocalità per adulti e bambini, individuale o di gruppo; corsi estivi di pianoforte e creatività;
+      incontri di musica in culla per bambini e genitori.
+    </div>
+    <div class="bg-pink-200 rounded-b-lg flex justify-end">
+      <a href='{{ absURL "corsi" }}'
+        class="bg-pink-400 hover:bg-pink-500 text-gray-900 font-bold py-2 px-20 rounded-2xl m-4 cursor-pointer">Scopri
+        di più</a>
+    </div>
+  </div>
+  <!--CORSI END-->
+
+  <div class="justify-center m-2 w-screen md:w-5/12">
+    <!--EVENTI START-->
+    <div class="bg-red-800 p-4 m-0 rounded-t-lg">
+      <a href='{{ absURL "eventi" }}'>
+        <h1 class="text-center font-bold text-white">Eventi</h1>
+      </a>
+    </div>
+    <img src='{{ ( resources.Get "images/HOME_eventi.png" ).RelPermalink }}' class="w-full object-cover" />
+    <div class="py-4 px-8 md:h-48 bg-red-200 text-gray-900 align-middle overflow-auto"><span class="font-bold">Lorem
+        Ipsum </span> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+      standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+      type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+      remaining essentially unchanged. It was popularised in the 1960s with the release of L</div>
+    <div class="bg-red-200 rounded-b-lg flex justify-end">
+      <a href='{{ absURL "eventi" }}'
+        class="bg-red-500 hover:bg-red-600 text-gray-900 font-bold py-2 px-20 rounded-2xl m-4 cursor-pointer">Scopri di
+        più</a>
+    </div>
+  </div>
+  <!--EVENTI END-->
+
+  <div class="justify-center m-2 w-screen md:w-5/12">
+    <!--CORO START-->
+    <div class="bg-blue-800 p-4 m-0 rounded-t-lg">
+      <a href='https://cecca.github.io/cortepolifonica/'>
+        <h1 class="text-center font-bold text-white">Coro</h1>
+      </a>
+    </div>
+    <img src='{{ ( resources.Get "images/HOME_coro.png" ).RelPermalink }}' class="w-full object-cover" />
+    <div class="py-4 px-8 md:h-48 bg-blue-200 text-gray-900 align-middle overflow-auto"><span class="font-bold">Lorem
+        Ipsum </span> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+      standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
+      type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+      remaining essentially unchanged. It was popularised in the 1960s with the release of L</div>
+    <div class="bg-blue-200 rounded-b-lg flex justify-end">
+      <a href='https://cecca.github.io/cortepolifonica/'
+        class="bg-blue-400 hover:bg-blue-500 text-gray-900 font-bold py-2 px-20 rounded-2xl m-4 cursor-pointer">Scopri
+        di più</a>
+    </div>
+  </div>
+  <!--CORO END-->
+</div>
