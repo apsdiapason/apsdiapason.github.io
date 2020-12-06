@@ -38,9 +38,13 @@
         var currentImages = document.querySelectorAll('.img-gallery');//getting all the images i display
         var usedSrc = new Set();
         var tochange = Math.floor(Math.random() * currentImages.length);//pick one at random to change
-
+        //first i check the ones already displayed
         for (i=0; i<currentImages.length; i++) {
             usedSrc.add(currentImages[i].src); //the one i see is used
+        }
+
+        //now i switch
+        for (i=0; i<currentImages.length; i++) {
             if (i==tochange) {
                 console.log('switching image '+ i+ ' '+ currentImages[i].src);
                 var keeplooking = true;
@@ -60,5 +64,5 @@
                 //still looking for the image to change
             }
         }
-    }, 2000);
+    }, 500);
 </script>
