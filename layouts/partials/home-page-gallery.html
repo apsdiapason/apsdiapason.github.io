@@ -35,11 +35,13 @@
 
 
     window.setInterval(function () {//un every 2 seconds
+        debugger;
         var currentImages = document.querySelectorAll('.img-gallery');//getting all the images i display
         var usedSrc = new Set();
         var tochange = Math.floor(Math.random() * currentImages.length);//pick one at random to change
         //first i check the ones already displayed
         for (i=0; i<currentImages.length; i++) {
+            console.log('Is displayed: '+currentImages[i].src);
             usedSrc.add(currentImages[i].src); //the one i see is used
         }
 
@@ -51,13 +53,16 @@
                 while (keeplooking) {
                     var j = Math.floor(Math.random() * sources.length);//pick one at random from the pool of sources
                     var currentsrc= sources[j];
+                    console.log('extracted at random is:'+currentsrc);
                     if(usedSrc.has(currentsrc)) {//if already used keeploking
+                        console.log('already in use so skip');
                         keeplooking = true;       
                     } else {
+                        console.log(currentsrc + ' is not displayed so i use it');
                         keeplooking = false;
-                        currentImages[i].src=sources[j]; //if found substituite
-                        usedSrc.add(sources[j]);//and track usage
-                        console.log('used j='+j+' src='+sources[j]);
+                        currentImages[i].src=currentsrc; //if found substituite
+                        usedSrc.add(currentsrc);//and track usage
+                        console.log('used j='+j+' src='+currentsrc);
                     }
                 }
             } else {
