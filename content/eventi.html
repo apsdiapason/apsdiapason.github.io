@@ -3,111 +3,94 @@
 
 <div class="bg-white">
     <nav class="flex flex-col sm:flex-row">
-        <button id="buttonNext" class="p-4 bg-teal-600 text-white font-semibold hover:text-teal-900 w-full sm:w-1/2" onclick="handleSwitch(event);">
+        <button id="buttonNext" class="p-4 bg-teal-600 text-white font-semibold hover:text-teal-900 w-full sm:w-1/2"
+            onclick="handleSwitch(event);">
             Prossimi Eventi
         </button>
-        <button  id="buttonPast"  class="p-4 bg-teal-100 text-teal-600  hover:text-teal-900 w-full sm:w-1/2" onclick="handleSwitch(event);">
+        <button id="buttonPast" class="p-4 bg-teal-100 text-teal-600  hover:text-teal-900 w-full sm:w-1/2"
+            onclick="handleSwitch(event);">
             Eventi passati
         </button>
     </nav>
 
-    <!-- container for all cards -->
+    <!-- container for all NEXT EVENTS -->
     <div id="nextEvents" class="container w-100 lg:w-4/5 mx-auto flex flex-col">
         <!-- card -->
-        <div v-for="card in cards" class="flex flex-col md:flex-row overflow-hidden
-                                          bg-white rounded-lg shadow-xl  mt-4 w-100 mx-2">
-          <!-- media -->
-          <div class="h-64 w-auto md:w-1/2">
-            <img class="inset-0 h-full w-full object-cover object-center" :src="card.img" />
-          </div>
-          <!-- content -->
-          <div class="w-full py-4 px-6 text-gray-800 flex flex-col justify-between">
-            <h3 class="font-semibold text-lg leading-tight truncate">{{ card.title }}</h3>
-            <p class="mt-2">
-              {{ card.excerpt }}
-            </p>
-            <p class="text-sm text-gray-700 uppercase tracking-wide font-semibold mt-2">
-              {{ card.author }} &bull; {{ card.date }}
-            </p>
-          </div>
-        </div><!--/ card-->
-  
-  
+        <div class="flex flex-col md:flex-row bg-white rounded-lg shadow-xl  mt-4 w-100 mx-2">
+            <!-- media -->
+            <div class="h-64 w-auto md:w-1/2">
+                <img class="inset-0 h-full w-full object-cover object-center" src="https://picsum.photos/200/300" />
+            </div>
+            <!-- content -->
+            <div class="w-full py-4 px-6 text-gray-800 flex flex-col justify-between">
+                <h3 class="font-semibold text-lg leading-tight truncate">{{ Event.title }}</h3>
+                <p class="mt-2">
+                    {{ Event.description }}
+                </p>
+                <p class="text-sm text-gray-700 uppercase tracking-wide font-semibold mt-2">
+                    {{ Event.Date }}
+                </p>
+            </div>
+        </div>
+        <!--/ card-->
+
+
         <!-- card -->
-        <div v-for="card in cards" class="flex flex-col md:flex-row overflow-hidden
-                                          bg-white rounded-lg shadow-xl  mt-4 w-100 mx-2">
-          <!-- media -->
-          <div class="h-64 w-auto md:w-1/2">
-            <img class="inset-0 h-full w-full object-cover object-center" :src="card.img" />
-          </div>
-          <!-- content -->
-          <div class="w-full py-4 px-6 text-gray-800 flex flex-col justify-between">
-            <h3 class="font-semibold text-lg leading-tight truncate">{{ card.title }}</h3>
-            <p class="mt-2">
-              {{ card.excerpt }}
-            </p>
-            <p class="text-sm text-gray-700 uppercase tracking-wide font-semibold mt-2">
-              {{ card.author }} &bull; {{ card.date }}
-            </p>
-          </div>
-        </div><!--/ card-->
-  
-      </div><!--/ flex container for all cards-->
+        <div class="flex flex-col md:flex-row bg-white rounded-lg shadow-xl  mt-4 w-100 mx-2">
+            <!-- media -->
+            <div class="h-64 w-auto md:w-1/2">
+                <img class="inset-0 h-full w-full object-cover object-center" src="https://picsum.photos/200/300" />
+            </div>
+            <!-- content -->
+            <div class="w-full py-4 px-6 text-gray-800 flex flex-col justify-between">
+                <h3 class="font-semibold text-lg leading-tight truncate">{{ Event.title }}</h3>
+                <p class="mt-2">
+                    {{ Event.description }}
+                </p>
+                <p class="text-sm text-gray-700 uppercase tracking-wide font-semibold mt-2">
+                    {{ Event.Date }}
+                </p>
+            </div>
+        </div>
+        <!--/ card-->
+
+    </div>
+    <!--/ flex container for all cards-->
 
     <!-- container for all cards -->
     <div id="pastEvents" class="hidden container w-100 lg:w-4/5 mx-auto flex-col">
         <!-- card -->
-        <div v-for="card in cards" class="flex flex-col md:flex-row overflow-hidden
-                                          bg-white rounded-lg shadow-xl  mt-4 w-100 mx-2">
-          <!-- media -->
-          <div class="h-64 w-auto md:w-1/2">
-            <img class="inset-0 h-full w-full object-cover object-center" :src="card.img" />
-          </div>
-          <!-- content -->
-          <div class="w-full py-4 px-6 text-gray-800 flex flex-col justify-between">
-            <h3 class="font-semibold text-lg leading-tight truncate">{{ card.title }}</h3>
-            <p class="mt-2">
-              {{ card.excerpt }}
-            </p>
-            <p class="text-sm text-gray-700 uppercase tracking-wide font-semibold mt-2">
-              {{ card.author }} &bull; {{ card.date }}
-            </p>
-          </div>
-        </div><!--/ card-->
-  
-  
-        <!-- card -->
-        <div v-for="card in cards" class="flex flex-col md:flex-row overflow-hidden
-                                          bg-white rounded-lg shadow-xl  mt-4 w-100 mx-2">
-          <!-- media -->
-          <div class="h-64 w-auto md:w-1/2">
-            <img class="inset-0 h-full w-full object-cover object-center" :src="card.img" />
-          </div>
-          <!-- content -->
-          <div class="w-full py-4 px-6 text-gray-800 flex flex-col justify-between">
-            <h3 class="font-semibold text-lg leading-tight truncate">{{ card.title }}</h3>
-            <p class="mt-2">
-              {{ card.excerpt }}
-            </p>
-            <p class="text-sm text-gray-700 uppercase tracking-wide font-semibold mt-2">
-              {{ card.author }} &bull; {{ card.date }}
-            </p>
-          </div>
-        </div><!--/ card-->
-  
-      </div><!--/ flex container for all cards-->
+        <div class="flex flex-col md:flex-row bg-white rounded-lg shadow-xl  mt-4 w-100 mx-2">
+            <!-- media -->
+            <div class="h-64 w-auto md:w-1/2">
+                <img class="inset-0 h-full w-full object-cover object-center" src="https://picsum.photos/200/300" />
+            </div>
+            <!-- content -->
+            <div class="w-full py-4 px-6 text-gray-800 flex flex-col justify-between">
+                <h3 class="font-semibold text-lg leading-tight truncate">{{ Event.title }}</h3>
+                <p class="mt-2">
+                    {{ Event.description }}
+                </p>
+                <p class="text-sm text-gray-700 uppercase tracking-wide font-semibold mt-2">
+                    {{ Event.Date }}
+                </p>
+            </div>
+        </div>
+        <!--/ card-->
+    </div>
+    <!--/ flex container for all cards-->
 </div>
 <script>
     function handleSwitch(event) {
         console.log('handleSwitch');
         var sourceiD = event.target.id || event.srcElement.id;
         console.log(sourceiD);
-        
+
         const nextEventsDiv = document.getElementById('nextEvents');
         const pastEventsDiv = document.getElementById('pastEvents');
         const nextEventsBtn = document.getElementById('buttonNext');
         const pastEventsBtn = document.getElementById('buttonPast');
-        if(sourceiD==='buttonNext') {
+        if (sourceiD === 'buttonNext') {
             //Fix buttons
             makeSelected(nextEventsBtn)
             makeUnselected(pastEventsBtn);
@@ -116,7 +99,7 @@
             nextEventsDiv.classList.remove('hidden');
             pastEventsDiv.classList.add('hidden');
         }
-        if(sourceiD==='buttonPast') {
+        if (sourceiD === 'buttonPast') {
             //Fix buttons
             makeSelected(pastEventsBtn)
             makeUnselected(nextEventsBtn);
@@ -128,13 +111,13 @@
     }
 
     function makeSelected(el) {
-        el.classList.add('bg-teal-600', 'text-white','font-semibold'); //make it selected
-        el.classList.remove('bg-teal-100','text-teal-600');//remove "unselected" style
+        el.classList.add('bg-teal-600', 'text-white', 'font-semibold'); //make it selected
+        el.classList.remove('bg-teal-100', 'text-teal-600');//remove "unselected" style
     }
 
     function makeUnselected(el) {
-        el.classList.add('bg-teal-100','text-teal-600');//make "unselected"
-        el.classList.remove('bg-teal-600', 'text-white','font-semibold');//remove "selected" style
+        el.classList.add('bg-teal-100', 'text-teal-600');//make "unselected"
+        el.classList.remove('bg-teal-600', 'text-white', 'font-semibold');//remove "selected" style
     }
 
 
