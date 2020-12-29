@@ -16,6 +16,9 @@
 <script>
     function handleSwitch(event) {
         console.log('handleSwitch');
+        var source = event.target || event.srcElement;
+        console.log(source);
+        
         const nextEvents = document.getElementById('nextEvents');
         const pastEvents = document.getElementById('pastEvents');
 
