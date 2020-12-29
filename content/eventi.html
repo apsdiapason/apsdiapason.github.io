@@ -3,25 +3,31 @@
 
 <div class="bg-white">
     <nav class="flex flex-col sm:flex-row">
-        <button class="p-4 bg-teal-600 text-white font-semibold hover:text-teal-900 w-1/2" onclick="handleSwitch();">
+        <button id="buttonNext" class="p-4 bg-teal-600 text-white font-semibold hover:text-teal-900 w-1/2" onclick="handleSwitch(event);">
             Prossimi Eventi
         </button>
-        <button class="p-4 bg-teal-100 text-teal-600  hover:text-teal-900 w-1/2" onclick="handleSwitch();">
+        <button  id="buttonPast"  class="p-4 bg-teal-100 text-teal-600  hover:text-teal-900 w-1/2 hidden" onclick="handleSwitch(event);">
             Eventi passati
         </button>
     </nav>
-    <div id="nextEvents">prossimi</div>
-    <div id="pastEvents">passati</div>
+    <div id="nextEvents">NEXT</div>
+    <div id="pastEvents">PAST</div>
 </div>
 <script>
     function handleSwitch(event) {
         console.log('handleSwitch');
-        var source = event.target || event.srcElement;
-        console.log(source);
+        var sourceiD = event.target.id || event.srcElement.id;
+        console.log(sourceiD);
         
         const nextEvents = document.getElementById('nextEvents');
         const pastEvents = document.getElementById('pastEvents');
-
-        //navmenu.classList.toggle('hidden');
+        if(sourceiD==='buttonNext') {
+            nextEvents.classList.remove('hidden');
+            pastEvents.classList.add('hidden');
+        }
+        if(sourceiD==='buttonPast') {
+            pastEvents.classList.remove('hidden');
+            nextEvents.classList.add('hidden');
+        }
     }
 </script>
