@@ -10,8 +10,92 @@
             Eventi passati
         </button>
     </nav>
-    <div id="nextEvents">NEXT</div>
-    <div id="pastEvents" class="hidden">PAST</div>
+
+    <!-- container for all cards -->
+    <div id="nextEvents" class="container w-100 lg:w-4/5 mx-auto flex flex-col">
+        <!-- card -->
+        <div v-for="card in cards" class="flex flex-col md:flex-row overflow-hidden
+                                          bg-white rounded-lg shadow-xl  mt-4 w-100 mx-2">
+          <!-- media -->
+          <div class="h-64 w-auto md:w-1/2">
+            <img class="inset-0 h-full w-full object-cover object-center" :src="card.img" />
+          </div>
+          <!-- content -->
+          <div class="w-full py-4 px-6 text-gray-800 flex flex-col justify-between">
+            <h3 class="font-semibold text-lg leading-tight truncate">{{ card.title }}</h3>
+            <p class="mt-2">
+              {{ card.excerpt }}
+            </p>
+            <p class="text-sm text-gray-700 uppercase tracking-wide font-semibold mt-2">
+              {{ card.author }} &bull; {{ card.date }}
+            </p>
+          </div>
+        </div><!--/ card-->
+  
+  
+        <!-- card -->
+        <div v-for="card in cards" class="flex flex-col md:flex-row overflow-hidden
+                                          bg-white rounded-lg shadow-xl  mt-4 w-100 mx-2">
+          <!-- media -->
+          <div class="h-64 w-auto md:w-1/2">
+            <img class="inset-0 h-full w-full object-cover object-center" :src="card.img" />
+          </div>
+          <!-- content -->
+          <div class="w-full py-4 px-6 text-gray-800 flex flex-col justify-between">
+            <h3 class="font-semibold text-lg leading-tight truncate">{{ card.title }}</h3>
+            <p class="mt-2">
+              {{ card.excerpt }}
+            </p>
+            <p class="text-sm text-gray-700 uppercase tracking-wide font-semibold mt-2">
+              {{ card.author }} &bull; {{ card.date }}
+            </p>
+          </div>
+        </div><!--/ card-->
+  
+      </div><!--/ flex container for all cards-->
+
+    <!-- container for all cards -->
+    <div id="pastEvents" class="hidden container w-100 lg:w-4/5 mx-auto flex-col">
+        <!-- card -->
+        <div v-for="card in cards" class="flex flex-col md:flex-row overflow-hidden
+                                          bg-white rounded-lg shadow-xl  mt-4 w-100 mx-2">
+          <!-- media -->
+          <div class="h-64 w-auto md:w-1/2">
+            <img class="inset-0 h-full w-full object-cover object-center" :src="card.img" />
+          </div>
+          <!-- content -->
+          <div class="w-full py-4 px-6 text-gray-800 flex flex-col justify-between">
+            <h3 class="font-semibold text-lg leading-tight truncate">{{ card.title }}</h3>
+            <p class="mt-2">
+              {{ card.excerpt }}
+            </p>
+            <p class="text-sm text-gray-700 uppercase tracking-wide font-semibold mt-2">
+              {{ card.author }} &bull; {{ card.date }}
+            </p>
+          </div>
+        </div><!--/ card-->
+  
+  
+        <!-- card -->
+        <div v-for="card in cards" class="flex flex-col md:flex-row overflow-hidden
+                                          bg-white rounded-lg shadow-xl  mt-4 w-100 mx-2">
+          <!-- media -->
+          <div class="h-64 w-auto md:w-1/2">
+            <img class="inset-0 h-full w-full object-cover object-center" :src="card.img" />
+          </div>
+          <!-- content -->
+          <div class="w-full py-4 px-6 text-gray-800 flex flex-col justify-between">
+            <h3 class="font-semibold text-lg leading-tight truncate">{{ card.title }}</h3>
+            <p class="mt-2">
+              {{ card.excerpt }}
+            </p>
+            <p class="text-sm text-gray-700 uppercase tracking-wide font-semibold mt-2">
+              {{ card.author }} &bull; {{ card.date }}
+            </p>
+          </div>
+        </div><!--/ card-->
+  
+      </div><!--/ flex container for all cards-->
 </div>
 <script>
     function handleSwitch(event) {
