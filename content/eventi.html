@@ -3,15 +3,15 @@
 
 <div class="bg-white">
     <nav class="flex flex-col sm:flex-row">
-        <button id="buttonNext" class="p-4 bg-teal-600 text-white font-semibold hover:text-teal-900 w-1/2" onclick="handleSwitch(event);">
+        <button id="buttonNext" class="p-4 bg-teal-600 text-white font-semibold hover:text-teal-900 w-full sm:w-1/2" onclick="handleSwitch(event);">
             Prossimi Eventi
         </button>
-        <button  id="buttonPast"  class="p-4 bg-teal-100 text-teal-600  hover:text-teal-900 w-1/2 hidden" onclick="handleSwitch(event);">
+        <button  id="buttonPast"  class="p-4 bg-teal-100 text-teal-600  hover:text-teal-900 w-full sm:w-1/2" onclick="handleSwitch(event);">
             Eventi passati
         </button>
     </nav>
     <div id="nextEvents">NEXT</div>
-    <div id="pastEvents">PAST</div>
+    <div id="pastEvents" class="hidden">PAST</div>
 </div>
 <script>
     function handleSwitch(event) {
