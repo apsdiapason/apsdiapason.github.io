@@ -26,6 +26,7 @@
         '{{ ( resources.Get "images/EVENT_20201229_Schubert.png" ).RelPermalink }}'
     ];//wil contain the list of images to use, despite how many i display
 
+    var toexclude = [ 'EVENT_20201229_Schubert.png'];
 
     //var poolsize = 50; testing only
     //for (i = 0; i < poolsize; i++) {
@@ -50,7 +51,7 @@
             var j = Math.floor(Math.random() * sources.length);//pick one at random from the pool of sources
             var currentsrc = sources[j].split('/').pop();
             console.log('extracted at random is:' + currentsrc);
-            if (usedSrc.has(currentsrc)) {//if already used keeploking
+            if (usedSrc.has(currentsrc) || toexclude.includes(currentsrc)) {//if already used keeploking
                 console.log('already in use so skip');
                 keeplooking = true;
             } else {
