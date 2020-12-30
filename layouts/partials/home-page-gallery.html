@@ -4,7 +4,7 @@
     <div class="w-1/4 m-2 rounded-lg"><img src='{{ ( resources.Get "images/GALLERY_03.PNG" ).RelPermalink }}' class="object-contain img-gallery w-full" /></div>
     <div class="w-1/4 m-2 rounded-lg"><img src='{{ ( resources.Get "images/GALLERY_04.PNG" ).RelPermalink }}' class="object-contain img-gallery w-full" /></div>
 </div>
-
+<button onclick="switchimage();"> click me</button>
 <script>
     //for testing only
 
@@ -24,51 +24,43 @@
         '{{ ( resources.Get "images/GALLERY_05.PNG" ).RelPermalink }}',
         '{{ ( resources.Get "images/GALLERY_06.PNG" ).RelPermalink }}',
         '{{ ( resources.Get "images/EVENT_20201229_Schubert.png" ).RelPermalink }}'
-        ];//wil contain the list of images to use, despite how many i display
-    
-    
+    ];//wil contain the list of images to use, despite how many i display
+
+
     //var poolsize = 50; testing only
     //for (i = 0; i < poolsize; i++) {
     //    var  currid= 1000+i;
     //    sources[i] = 'https://picsum.photos/id/'+currid+'/300';
     //}
 
-
-
-    window.setInterval(function () {//un every 2 seconds
-        debugger;
-        var currentImages = document.querySelectorAll('.img-gallery');//getting all the images i display
+    function switchimage() {
+        var currentImages = document.querySelectorAll('.img-gallery');//getting all the images i currently display
         var usedSrc = new Set();
         var tochange = Math.floor(Math.random() * currentImages.length);//pick one at random to change
         //first i check the ones already displayed
-        for (i=0; i<currentImages.length; i++) {
-            console.log('Is displayed: '+currentImages[i].src);
+        for (i = 0; i < currentImages.length; i++) {
+            console.log('Is displayed: ' + currentImages[i].src);
             usedSrc.add(currentImages[i].src); //the one i see is used
         }
 
-        //now i switch
-        for (i=0; i<currentImages.length; i++) {
-            if (i==tochange) {
-                console.log('switching image '+ i+ ' '+ currentImages[i].src);
-                var keeplooking = true;
-                while (keeplooking) {
-                    var j = Math.floor(Math.random() * sources.length);//pick one at random from the pool of sources
-                    var currentsrc= sources[j];
-                    console.log('extracted at random is:'+currentsrc);
-                    if(usedSrc.has(currentsrc)) {//if already used keeploking
-                        console.log('already in use so skip');
-                        keeplooking = true;       
-                    } else {
-                        console.log(currentsrc + ' is not displayed so i use it');
-                        keeplooking = false;
-                        currentImages[i].src=currentsrc; //if found substituite
-                        usedSrc.add(currentsrc);//and track usage
-                        console.log('used j='+j+' src='+currentsrc);
-                    }
-                }
+        console.log('switching image ' + i + ' ' + currentImages[i].src);
+        var keeplooking = true;
+        while (keeplooking) {
+            var j = Math.floor(Math.random() * sources.length);//pick one at random from the pool of sources
+            var currentsrc = sources[j];
+            console.log('extracted at random is:' + currentsrc);
+            if (usedSrc.has(currentsrc)) {//if already used keeploking
+                console.log('already in use so skip');
+                keeplooking = true;
             } else {
-                //still looking for the image to change
+                console.log(currentsrc + ' is not displayed so i use it');
+                keeplooking = false;
+                currentImages[tochange].src = currentsrc; //if found substituite
+                usedSrc.add(currentsrc);//and track usage
+                console.log('used j=' + j + ' src=' + currentsrc);
             }
         }
-    }, 2000);
+    }
+
+    //window.setInterval(switchimage(), 2000);
 </script>
