@@ -40,14 +40,15 @@
         //first i check the ones already displayed
         for (i = 0; i < currentImages.length; i++) {
             console.log('Is displayed: ' + currentImages[i].src);
-            usedSrc.add(currentImages[i].src); //the one i see is used
+            var imgname= currentImages[i].src.split('/').pop();
+            usedSrc.add(imgname); //the one i see is used
         }
 
         console.log('switching image ' + tochange + ' ' + currentImages[tochange].src);
         var keeplooking = true;
         while (keeplooking) {
             var j = Math.floor(Math.random() * sources.length);//pick one at random from the pool of sources
-            var currentsrc = sources[j];
+            var currentsrc = sources[j].split('/').pop();
             console.log('extracted at random is:' + currentsrc);
             if (usedSrc.has(currentsrc)) {//if already used keeploking
                 console.log('already in use so skip');
@@ -55,9 +56,9 @@
             } else {
                 console.log(currentsrc + ' is not displayed so i use it');
                 keeplooking = false;
-                currentImages[tochange].src = currentsrc; //if found substituite
+                currentImages[tochange].src = sources[j]; //if found substituite
                 usedSrc.add(currentsrc);//and track usage
-                console.log('used j=' + j + ' src=' + currentsrc);
+                console.log('used j=' + j + ' src=' + sources[j]);
             }
         }
     }
