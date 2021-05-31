@@ -1,4 +1,4 @@
-baseURL = "https://apsdiapason.it/"
+baseURL = "http://apsdiapason.it/"
 languageCode = "en-us"
 title = "Aps Diapason"
 # theme = "twcss"
