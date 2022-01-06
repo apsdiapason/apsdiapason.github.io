@@ -1,29 +1,25 @@
 +++
 +++
 
-<nav class="flex flex-col text-center
-            md:flex-row
-            md:flex-no-wrap md:space-x-3 
-            md:justify-center
-            md:w-full 
-            md:pb-5 md:pt-5
-            md:text-center text-2xl font-light
-            bg-gray-100
-            border-gray-500
-            text-gray-600" id="nav">
-    <a href="#pianoforte" class="px-2 m-2 border-teal-500  border-2 rounded">Pianoforte</a>
-    <span class="hidden md:inline px-2 m-2">&middot;</span>
-    <a href="#propedeutica" class="px-2 m-2 border-teal-500  border-2 rounded">Propedeutica musicale</a>
-    <span class="hidden md:inline px-2 m-2">&middot;</span>
-    <a href="#avviamento" class="px-2 m-2 border-teal-500  border-2 rounded">Avviamento alla musica</a>
-    <span class="hidden md:inline px-2 m-2">&middot;</span>
-    <a href="#vocalita" class="px-2 m-2 border-teal-500  border-2 rounded">Vocalità</a>
-    <span class="hidden md:inline px-2 m-2">&middot;</span>
-    <a href="#musicalmente" class="px-2 m-2 border-teal-500  border-2 rounded">Musicalmente</a>
+<nav class="flex flex-col sm:flex-row">
+    <button id="btnCorsi" class="p-4 m-2 bg-teal-600 text-white font-semibold hover:text-teal-900 w-full sm:w-1/2 rounded-xl"
+    onclick="handleSwitch(event);">
+    Corsi
+    </button>
+    <button id="btnLezioniConcerto" class="p-4 m-2 bg-teal-100 text-teal-600  hover:text-teal-900 w-full sm:w-1/2 rounded-xl"
+    onclick="handleSwitch(event);">
+    Lezioni Concerto
+    </button>
+    <button id="btnProgettiScuole" class="p-4 m-2 bg-teal-100 text-teal-600  hover:text-teal-900 w-full sm:w-1/2 rounded-xl"
+    onclick="handleSwitch(event);">
+    Progetti Scuole
+    </button>
 </nav>
 
 
-<div id="pianoforte" class="flex flex-wrap p-2">
+<div id="divCorsi" class="container lg:w-4/5 mx-auto flex flex-col"> <!-- container for CORSI -->
+
+    <div id="pianoforte" class="flex flex-wrap p-2">
     <img class="w-full md:w-1/3 rounded-t-lg md:rounded-t-none md:rounded-l-lg" src="https://apsdiapason.github.io/images/HOME_corsi.png"  />
     <div class="w-full md:w-2/3 p-4 rounded-b-lg md:rounded-b-none md:rounded-r-lg bg-teal-100">
         <div class="text-gray-900 font-bold text-xl mb-2">Pianoforte</div>
@@ -120,3 +116,51 @@
         </div>
     </div>
 </div>
+</div><!-- END container for CORSI -->
+
+
+
+<div id="divLezioniConcerto" class="hidden container lg:w-4/5 mx-auto flex flex-col">LC</div><!-- container for LezioniConcerto -->
+<div id="divProgettiScuole" class="hidden container lg:w-4/5 mx-auto flex flex-col">PS</div><!-- container for ProgettiScuole -->
+
+
+<script>
+    function handleSwitch(event) {
+        labels= ['Corsi', 'LezioniConcerto','ProgettiScuole' ];
+
+        console.log('handleSwitch');
+        var sourceiD = event.target.id || event.srcElement.id;
+        console.log(sourceiD);
+
+        for (let i = 0; i < labels.length; i++) {
+            var currentLabel= labels[i];
+            console.log('current label '+ currentLabel);
+            var currentDiv = document.getElementById('div'+currentLabel);
+            var currentBtn = document.getElementById('btn'+currentLabel);
+
+            if (sourceID === ('btn'+currentLabel)) { //make selected
+                makeSelected(currentBtn);
+                currentDiv.classList.remove('hidden');
+                currentDiv.classList.add('flex');
+            } else { //make unselected and hidden
+                makeUnselected(currentBtn);
+                currentDiv.classList.add('hidden');
+                currentDiv.classList.remove('flex');
+            }
+
+
+        }
+    }
+
+    function makeSelected(el) {
+        el.classList.add('bg-teal-600', 'text-white', 'font-semibold'); //make it selected
+        el.classList.remove('bg-teal-100', 'text-teal-600');//remove "unselected" style
+    }
+
+    function makeUnselected(el) {
+        el.classList.add('bg-teal-100', 'text-teal-600');//make "unselected"
+        el.classList.remove('bg-teal-600', 'text-white', 'font-semibold');//remove "selected" style
+    }
+
+
+</script>
